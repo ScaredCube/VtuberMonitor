@@ -1,0 +1,91 @@
+<link href="basel.css" rel="stylesheet" type="text/css" />
+
+<script> 
+    function createIframe() {
+    var i = document.createElement("iframe");
+        frameborder="no";
+        framespacing="0";
+        i.scrolling="no";
+        i.allow="autoplay;encrypted-media";
+        i.allowfullscreen="true";
+        document.getElementById("div-that-holds-the-iframe").appendChild(i);
+    };
+     //兼容性处理
+     if (window.addEventListener) window.addEventListener("load", createIframe, false);
+     else if (window.attachEvent) window.attachEvent("onload", createIframe);
+     else window.onload = createIframe;
+</script>
+
+
+<script>
+    function change(){    
+            var roomid = document.getElementsByName("zhubo")[0].value
+            document.getElementById("iframe").src='https://www.bilibili.com/blackboard/live/live-activity-player.html?cid=' +roomid+"&quality=1"
+            document.getElementById("now").value="当前直播间号："+ roomid
+            if(document.getElementsByName("zhubo")[0].value == "null")
+            {
+                document.getElementById("now").value="您未选择直播间"
+            }
+            else if(document.getElementsByName("zhubo")[0].value == "custom")
+            {
+                document.getElementById("now").value="您未选择直播间"
+                Custom()
+            }
+    }
+    function Custom(){
+        var x;
+        var roomid=prompt("输入直播间号","请输入B站直播间号");
+        if (roomid!=null && roomid!=""){
+            document.getElementById("iframe").src='https://www.bilibili.com/blackboard/live/live-activity-player.html?cid=' +roomid+"&quality=1"
+            document.getElementById("now").value="当前直播间号："+ roomid
+        }
+    }
+</script>
+
+<body style="background-color:rgba(255, 255, 255, 0);"></body>
+<div>
+    <iframe id="iframe" style="width: 95%;height: 80%;" src=""></iframe>
+    <div>
+        <select name="zhubo" id="zhubo" onchange="change()">
+            <option value="null">请选择直播间</option>
+
+            <option value="48743">hanser</option>
+            <option value="47377">泠鸢yousa</option>
+            <option value="23805029">雾深Girimi</option>
+            
+            <option value="15152878">鹿乃ちゃん</option>
+            <option value="21547904">小东人魚Official</option>
+            <option value="21547895">花丸晴琉Official</option>
+            <option value="21671418">野野宫のののOfficial</option>
+            <option value="25601185">LONちゃん</option>
+
+            <option value="21551814">初音未来_Crypton</option>
+            <option value="1546736">洛天依</option>
+
+            <option value="4138602">小希小桃Channel</option>
+            <option value="11754098">七濑胡桃menherachan</option>
+            <option value="21712406">AIChannel中国绊爱</option>
+            <option value="1485080">AIChannel官方</option>
+
+            <option value="598192">紫苏九月</option>
+            <option value="597450">花园花玲</option>
+            <option value="7953876">宴宁ccccc</option>
+            <option value="392523">多多poi、</option>
+            
+            <option value="21304638">神楽七奈Official</option>
+            <option value="21263282">Yommyko</option>
+            <option value="25411285">yoyo鹿鸣_Lumi</option>
+            <option value="14327465">花园Serena</option>
+            <option value="21919321">HiiroVTuber</option>
+            <option value="22057036">空酱Official</option>
+
+            <option value="8792912">咩栗</option>
+            <option value="22384516">呜米</option>
+
+            <option value="22816111">東雪蓮Official</option>
+            <option value="custom">自定义直播间</option>
+        </select>
+        <input type="text" id="now" value="您未选择直播间" readonly="true"> 
+
+    </div>
+</div>

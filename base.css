@@ -1,0 +1,33 @@
+#iframe{
+    margin: 5px;
+    background: #202425;
+    box-shadow: 0 5px 16px 0 #202425;
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+select{
+    color: #8B8C8C;
+    margin: 2px;
+    width: 50%;
+    height: 30px;
+    background: #323637;
+    box-shadow: 0 5px 16px 0 #323637;
+    backdrop-filter: blur( 8.5px );
+    -webkit-backdrop-filter: blur( 8.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+input{
+    color: #8B8C8C;
+    margin: 2px;
+    width: 40%;
+    height: 30px;
+    background: #323637;
+    box-shadow: 0 5px 16px 0 #323637;
+    backdrop-filter: blur( 8.5px );
+    -webkit-backdrop-filter: blur( 8.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
